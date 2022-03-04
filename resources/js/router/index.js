@@ -1,9 +1,9 @@
-// import VueRouter from "vue-router";
+import {createRouter, createWebHashHistory} from "vue-router";
 import routes from "./routes";
 
-const router = VueRouter.createRouter({
+const router = createRouter({
     // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
-    history: VueRouter.createWebHashHistory(),
+    history: createWebHashHistory(),
     routes, // short for `routes: routes`
 });
 
