@@ -1,11 +1,32 @@
 <template>
-  <div class="about">
-    <h2>About Page</h2>
+  <div class="home">
+    <h1>After Login</h1>
+
+    <div v-if="!isLogging">
+    <h2>Hi, User</h2>
+     
+    </div>
+
+
   </div>
 </template>
 
 <script>
-export default {
-  name: 'about',
-};
+
+
+  export default {
+
+      data(){
+          return {
+              data : {
+                  email : 'hi', 
+                  password: 'pass'
+              }, 
+              isLogging: false, 
+          }
+      }, 
+      methods : {
+
+      }
+  }
 </script>

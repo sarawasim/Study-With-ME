@@ -1,5 +1,5 @@
 require("./bootstrap");
-
+window.Vue = require("vue");
 import { createApp } from "vue";
 
 import router from "./router/index";

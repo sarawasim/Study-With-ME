@@ -13,4 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/home/login','App\Http\Controllers\AdminController@login');
+Route::post('/create_user', 'App\Http\Controllers\AdminController@createUser');
+Route::post('/verify_user', 'App\Http\Controllers\AdminController@verifyLogin');
+
+
 Route::get('/{any}', 'App\Http\Controllers\PagesController@index')->where('any', '.*');
+Route::get('/logout', 'AdminController@logout');
