@@ -18,13 +18,13 @@ Route::post('/create_user', 'App\Http\Controllers\AdminController@createUser');
 Route::post('/verify_user', 'App\Http\Controllers\AdminController@verifyLogin');
 
 
-Route::get('/{any}', 'App\Http\Controllers\PagesController@index')->where('any', '.*');
+// Route::get('/{any}', 'App\Http\Controllers\PagesController@index')->where('any', '.*');
 Route::get('/logout', 'AdminController@logout');
 
-Route::get('/video_chat','App\Http\Controllers\VideoChatController@index');
-Route::post('/auth/video_chat', 'App\Http\Controllers\‘VideoChatController@auth');
+Route::group(['middleware' => 'auth'], function(){
+  Route::get('/video_chat', 'App\Http\Controllers\VideoChatController@index');
+  Route::post('/auth/video_chat’, ‘App\Http\Controllers\VideoChatController@auth');
+});
+Auth::routes();
 
-// Route::group(['middleware' => 'auth'], function(){
-//   Route::get('/video_chat', 'VideoChatController@index');
-//   Route::post('/auth/video_chat’, ‘VideoChatController@auth');
-// });
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

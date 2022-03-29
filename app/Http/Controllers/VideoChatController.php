@@ -1,15 +1,15 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Pusher\Pusher;
+use App\Models\User;
 
 class VideoChatController extends Controller
 {
-     public function index(Request $request) {
+    public function index(Request $request) {
         $user = $request->user();
-        $others = \App\User::where('id', '!=', $user->id)->pluck('name', 'id');
-        return view('index')->with([
+        $others = User::where('id', '!=', $user->id)->pluck('name', 'id');
+        return view('video_chat.index')->with([
             'user' => collect($request->user()->only(['id', 'name'])),
             'others' => $others
         ]);
