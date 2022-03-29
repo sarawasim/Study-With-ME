@@ -4,6 +4,7 @@ import { createApp } from "vue";
 
 import router from "./router/index";
 import App from "./App.vue";
+// Vue.component("video-chat", require("./components/VideoChat.vue").default);
 
 const app = createApp({});
 
