@@ -22857,6 +22857,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 videoHere.srcObject = stream;
                 _this2.stream = stream;
                 pusher = _this2.getPusherInstance();
+                console.log(pusher);
                 _this2.channel = pusher.subscribe('presence-video-chat');
 
                 _this2.channel.bind("client-signal-".concat(_this2.user.id), function (signal) {
@@ -22865,7 +22866,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   peer.signal(signal.data);
                 });
 
-              case 9:
+              case 10:
               case "end":
                 return _context.stop();
             }

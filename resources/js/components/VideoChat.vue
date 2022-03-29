@@ -65,6 +65,7 @@ export default {
       videoHere.srcObject = stream;
       this.stream = stream;
       const pusher = this.getPusherInstance();
+      console.log(pusher)
       this.channel = pusher.subscribe('presence-video-chat');
       this.channel.bind(`client-signal-${this.user.id}`, (signal) => 
       {

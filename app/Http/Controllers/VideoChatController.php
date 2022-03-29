@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Pusher\Pusher;
 
 class VideoChatController extends Controller
 {
