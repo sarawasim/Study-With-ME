@@ -1,21 +1,25 @@
 <template>
-  <div>
-    <navbar/>
-    {{message}}
-    <router-view/>
+  <div class="container">
+    <!-- <navbar /> -->
+    <router-view />
+
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
-
+// import Navbar from './components/Navbar.vue';
 export default {
-  components: { Navbar },
+  // components: { Navbar },
   computed: {},
   data() {
-      return {
-          message:'Hello World :)'
-      }
-  }
+    return {
+      isLoggedIn: '',
+    };
+  },
+  methods: {},
 };
 </script>
+
+<style>
+@import '../css/app.css';
+</style>

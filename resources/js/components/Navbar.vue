@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <li>
-        <router-link :to="{name: 'home'}">Home</router-link>
+        <router-link :to="{name: 'dashboard'}">Dashboard</router-link>
       </li>
       <li>
         <router-link :to="{name: 'about'}">About</router-link>

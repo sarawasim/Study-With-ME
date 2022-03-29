@@ -75,7 +75,7 @@ export default {
       const res = await this.callApi('post', '/create_user', this.data);
       if (res.status === 200) {
         // this.s(res.data.msg)
-        window.location = '/about';
+        window.location = '/';
       } else {
         if (res.status === 401) {
           this.i(res.data.msg);
